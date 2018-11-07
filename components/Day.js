@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import Row from './Row';
 
@@ -7,7 +7,8 @@ export default class Day extends React.Component {
   static propTypes = {
     movement: PropTypes.string.isRequired,
     accessories: PropTypes.array.isRequired,
-  }; 
+    value: PropTypes.string.isRequired
+  };
 
   renderItem({ item }) {
     return <Row exercise={item} />
@@ -19,8 +20,8 @@ export default class Day extends React.Component {
 
   render() {
     return (
-      <View>
-        <Row exercise={this.props.movement} sets={3} reps={5}/>
+      <View style={styles.container}>
+        <Row exercise={this.props.movement} sets={3} reps={5} value={this.props.value} />
         <Row exercise={this.props.movement} sets={1} reps="AMRAP" />
         <FlatList
           data={this.props.accessories}
@@ -31,3 +32,10 @@ export default class Day extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 10,
+    marginVertical: 30
+  }
+})

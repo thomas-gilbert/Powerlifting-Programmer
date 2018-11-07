@@ -3,24 +3,20 @@ import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { Grid, Col, H3, Text } from 'native-base'
 
-export default Row = ({ exercise, sets, reps }) => {
+export default Row = ({ exercise, sets, reps, value }) => {
   return (
     <View>
       <Grid>
-        <Col style={styles.row}>
-          <H3 style={styles.exercise}>{ exercise }</H3>
+        <Col style={[styles.row, styles.exercise]}>
+          <Text style={[styles.bold, styles.text]}>{exercise}</Text>
         </Col>
         <Col style={styles.row}>
-          <Text>Sets</Text>
-          <Text>{ sets || 3 }</Text>
+          <Text style={[styles.bold, styles.text]}>Sets/Reps</Text>
+          <Text style={styles.text}>{sets || 3}x{reps || 10}</Text>
         </Col>
         <Col style={styles.row}>
-          <Text>Reps</Text>
-          <Text>{ reps || 10 }</Text>
-        </Col>
-        <Col style={styles.row}>
-          <Text>Weight</Text>
-          <Text></Text>
+          <Text style={[styles.bold, styles.text]}>Weight</Text>
+          <Text style={styles.text}>{value}</Text>
         </Col>
       </Grid>
     </View>
@@ -29,11 +25,18 @@ export default Row = ({ exercise, sets, reps }) => {
 
 const styles = StyleSheet.create({
   exercise: {
-    flex: 1,
     textAlign: 'center',
-    justifyContent: 'center'
+    justifyContent: 'flex-end',
+    backgroundColor: '#f3f3f3'
   },
   row: {
-    height: 100
+    marginBottom: 10,
+    paddingVertical: 10
+  },
+  bold: {
+    fontWeight: 'bold'
+  },
+  text: {
+    textAlign: 'center'
   }
 });

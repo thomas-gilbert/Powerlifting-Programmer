@@ -1,11 +1,18 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, AsyncStorage } from 'react-native';
 import Day from '../components/Day';
 
 export default class Day1 extends React.Component {
-  static navigationOptions = {
-    title: 'Day1',
+  state = {
+    deadlift: '0'
   };
+
+  async componentDidMount() {
+    const deadlift = await AsyncStorage.getItem('deadlift');
+    this.setState({
+      deadlift
+    });
+  }
 
   render() {
     return (
@@ -18,6 +25,7 @@ export default class Day1 extends React.Component {
             'Barbell Row',
             'Planks',
           ]}
+          value={this.state.deadlift}
         />
       </ScrollView>
     );

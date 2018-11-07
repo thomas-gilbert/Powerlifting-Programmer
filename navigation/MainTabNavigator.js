@@ -32,7 +32,7 @@ const Day1Stack = createStackNavigator({
 });
 
 Day1Stack.navigationOptions = {
-  tabBarLabel: 'Day1',
+  tabBarLabel: 'Day 1',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -46,7 +46,7 @@ const Day2Stack = createStackNavigator({
 });
 
 Day2Stack.navigationOptions = {
-  tabBarLabel: 'Day2',
+  tabBarLabel: 'Day 2',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -60,7 +60,7 @@ const Day3Stack = createStackNavigator({
 });
 
 Day3Stack.navigationOptions = {
-  tabBarLabel: 'Day3',
+  tabBarLabel: 'Day 3',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -74,7 +74,7 @@ const Day4Stack = createStackNavigator({
 });
 
 Day4Stack.navigationOptions = {
-  tabBarLabel: 'Day4',
+  tabBarLabel: 'Day 4',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

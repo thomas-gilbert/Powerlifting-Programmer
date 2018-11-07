@@ -6,7 +6,19 @@ import AppNavigator from './navigation/AppNavigator';
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
+    weight: {
+      deadlift: 0,
+      bench: 0,
+      squat: 0,
+      ohp: 0
+    }
   };
+
+  updateWeight(weight) {
+    this.setState({
+      weight
+    })
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
@@ -21,7 +33,10 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
+          <AppNavigator
+            weight={this.state.weight}
+            updateWeight={this.updateWeight}
+          />
         </View>
       );
     }
