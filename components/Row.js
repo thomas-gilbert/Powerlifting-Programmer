@@ -16,7 +16,7 @@ export default Row = ({ exercise, sets, reps, value }) => {
         </Col>
         <Col style={styles.row}>
           <Text style={[styles.bold, styles.text]}>Weight</Text>
-          <Text style={styles.text}>{value}</Text>
+          <Text style={styles.text}>{value || 'RPE8'}</Text>
         </Col>
       </Grid>
     </View>

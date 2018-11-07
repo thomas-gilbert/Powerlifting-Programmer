@@ -69,6 +69,7 @@ export default class HomeScreen extends React.Component {
                   onChangeText={(value) => this.onValueChange('deadlift', value)}
                   value={this.state.deadlift}
                   keyboardType='numeric'
+                  maxLength={4}
                 />
               </Item>
               <Item inlineLabel>
@@ -77,6 +78,7 @@ export default class HomeScreen extends React.Component {
                   onChangeText={(value) => this.onValueChange('bench', value)}
                   value={this.state.bench}
                   keyboardType='numeric'
+                  maxLength={4}
                 />
               </Item>
               <Item inlineLabel>
@@ -85,6 +87,7 @@ export default class HomeScreen extends React.Component {
                   onChangeText={(value) => this.onValueChange('squat', value)}
                   value={this.state.squat}
                   keyboardType='numeric'
+                  maxLength={4}
                 />
               </Item>
               <Item inlineLabel>
@@ -93,6 +96,7 @@ export default class HomeScreen extends React.Component {
                   onChangeText={(value) => this.onValueChange('ohp', value)}
                   value={this.state.ohp}
                   keyboardType='numeric'
+                  maxLength={4}
                 />
               </Item>
               <Item picker>

@@ -22,7 +22,7 @@ export default class Day extends React.Component {
     return (
       <View style={styles.container}>
         <Row exercise={this.props.movement} sets={3} reps={5} value={this.props.value} />
-        <Row exercise={this.props.movement} sets={1} reps="AMRAP" />
+        <Row exercise={this.props.movement} sets={1} reps="AMRAP" value={this.props.value} />
         <FlatList
           data={this.props.accessories}
           keyExtractor={this.keyExtractor}
